@@ -1,5 +1,5 @@
 Feature: ShopperStackLogin
-
+@Smoke @Regression
 Scenario: Validate shopper can login using valid credentials
 
 Given Browser is open and URL navigated
@@ -10,6 +10,7 @@ And clicks on login button
 Then shopper should be successfully logged in
 And Browser must be closed
 
+@Smoke @Regression
 Scenario: Validate Merchant can login using valid credentials
 
 Given Browser is open and URL navigated
@@ -20,6 +21,7 @@ And clicks on  login button
 Then Merchant should be successfully logged in
 And Browser must be closed
 
+@Regression
 Scenario: Validate Admin can login using valid credentials
 
 Given Browser is open and URL navigated

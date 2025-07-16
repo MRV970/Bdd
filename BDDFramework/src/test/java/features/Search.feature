@@ -1,5 +1,5 @@
 Feature: Search
-
+@Regression
 Scenario Outline:
 
  Validate when user enters text in search text field then search result 

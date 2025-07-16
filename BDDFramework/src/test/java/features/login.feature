@@ -1,6 +1,6 @@
 Feature: Login
 
-
+@Smoke @Regression
 Scenario:
 Validate user is able to Login with valid credentials
 

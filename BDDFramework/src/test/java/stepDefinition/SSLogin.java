@@ -30,7 +30,15 @@ public class SSLogin {
 	public void shopper_login_is_displayed() {
 	 Assert.assertTrue(driver.findElement(By.xpath("//strong[contains(.,'Shopper')]")).isDisplayed());
 	}
-
+	@Given("Merchant Login is Displayed")
+	public void merchant_login_is_displayed() {
+	    driver.findElement(By.xpath("//button[text()='Merchant Login']")).click();
+	}
+	@Given("Admin Login is Displayed")
+	public void admin_login_is_displayed() {
+		driver.findElement(By.xpath("//button[text()='Admin Login']")).click();
+		driver.findElement(By.xpath("//span[text()='Login']")).click();
+	}
 	@When("User enters {string} and {string}")
 	public void user_enters_and(String username, String password) {
 	    driver.findElement(By.id("Email")).sendKeys(username);
@@ -41,6 +49,11 @@ public class SSLogin {
 	public void clicks_on_login_button() {
 	   driver.findElement(By.xpath("//span[text()='Login']")).click();
 	}
+	@When("clicks on  login button")
+	public void clicks_on_login_button1() {
+		   driver.findElement(By.xpath("//span[text()='Login']")).click();
+	}
+//	
 
 	@Then("shopper should be successfully logged in")
 	public void shopper_should_be_successfully_logged_in() {
@@ -52,25 +65,26 @@ public class SSLogin {
 	    driver.quit();
 	}
 
-	@Given("Merchant Login is Displayed")
-	public void merchant_login_is_displayed() {
-	    
-	}
+//	@Given("Merchant Login is Displayed")
+//	public void merchant_login_is_displayed() {
+//	    driver.findElement(By.xpath("//button[text()='Merchant Login']")).click();
+//	}
 
-	@When("clicks on  login button")
-	public void clicks_on_login_button1() {
-	    
-	}
+//	@When("clicks on  login button")
+//	public void clicks_on_login_button1() {
+//		   driver.findElement(By.xpath("//span[text()='Login']")).click();
+//	}
 
 	@Then("Merchant should be successfully logged in")
 	public void merchant_should_be_successfully_logged_in() {
 	   System.out.println("Merchant not logged in");
 	}
 
-	@Given("Admin Login is Displayed")
-	public void admin_login_is_displayed() {
-		driver.findElement(By.xpath("//span[text()='Login']")).click();
-	}
+//	@Given("Admin Login is Displayed")
+//	public void admin_login_is_displayed() {
+//		driver.findElement(By.xpath("//button[text()='Admin Login']")).click();
+//		driver.findElement(By.xpath("//span[text()='Login']")).click();
+//	}
 
 	@Then("Admin should be successfully logged in")
 	public void admin_should_be_successfully_logged_in() {
